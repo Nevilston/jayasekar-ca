@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio website for Chartered Accountant K. Jayasekar offering GST, Income Tax, Auditing, and Company Registration services.">
+  <title>Jayasekar &amp; Co | Chartered Accountants</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0b1f3a',
+            lightgray: '#f5f7fa',
+            accent: '#4f6bff'
+          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          boxShadow: {
+            card: '0 12px 40px rgba(11,31,58,0.08)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .bg-grid {
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.12) 1px, transparent 0);
+      background-size: 32px 32px;
+    }
+    .nav-link {
+      position: relative;
+      padding-bottom: 6px;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #4f6bff;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 180ms ease;
+    }
+    .nav-link:hover::after,
+    .nav-link:focus-visible::after {
+      transform: scaleX(1);
+    }
+  </style>
+</head>
+<body class="antialiased bg-lightgray text-navy">
+  <div class="min-h-screen flex flex-col">
+    <header class="sticky top-0 z-50 backdrop-blur bg-white/90 border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img src="Assets/ca.png" alt="Jayasekar &amp; Co logo" class="h-10 w-10 object-contain rounded-full border border-slate-200 bg-white shadow-sm" loading="lazy">
+          <div>
+            <p class="text-base font-semibold">Jayasekar &amp; Co</p>
+            <p class="text-xs text-slate-500">Chartered Accountants</p>
+          </div>
+        </div>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a class="nav-link hover:text-accent transition" href="#home">Home</a>
+          <a class="nav-link hover:text-accent transition" href="#about">About</a>
+          <a class="nav-link hover:text-accent transition" href="#services">Services</a>
+          <a class="nav-link hover:text-accent transition" href="#contact">Contact</a>
+        </nav>
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-md text-sm font-semibold shadow-card hover:translate-y-[1px] transition">Consult Now</a>
+      </div>
+    </header>
+
+    <main id="home" class="flex-1">
+      <section class="relative overflow-hidden">
+        <div class="lg:grid lg:grid-cols-2 lg:min-h-[520px]">
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-navy via-[#132a4e] to-[#0b1f3a]"></div>
+            <div class="absolute inset-0 opacity-30 bg-grid"></div>
+            <div class="relative max-w-3xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+              <div class="max-w-2xl text-white space-y-6">
+                <p class="text-sm uppercase tracking-[0.3em] text-slate-200">Trusted Chartered Accountant</p>
+                <h1 class="text-4xl sm:text-5xl font-semibold leading-tight">Precision-led finance &amp; tax advisory for growing Indian businesses.</h1>
+                <p class="text-lg text-slate-200/90">K. Jayasekar, FCA &mdash; bringing 20+ years of audit, taxation, and corporate banking experience to keep your compliance flawless and your growth decisive.</p>
+                <div class="flex flex-wrap items-center gap-4">
+                  <a href="#contact" class="inline-flex items-center gap-2 bg-white text-navy px-5 py-3 rounded-md font-semibold shadow-card hover:translate-y-[1px] transition">Consult Now</a>
+                  <a href="#services" class="inline-flex items-center gap-2 text-white/90 hover:text-white transition">View Services</a>
+                </div>
+                <div class="flex gap-6 pt-4 text-sm text-slate-200/80">
+                  <div>
+                    <p class="font-semibold text-white">Membership</p>
+                    <p>ICAI No. 029286 &bull; FRN 010994S</p>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-white">RBI MEF</p>
+                    <p>MEF 42850 &bull; Code 897911</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative hidden lg:block">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center"></div>
+            <div class="absolute inset-0 bg-navy/10 mix-blend-multiply"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="max-w-6xl mx-auto px-6 py-16 lg:py-20">
+        <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-12 items-start">
+          <div class="space-y-6">
+            <p class="text-sm font-semibold text-navy/70 tracking-wide">About</p>
+            <h2 class="text-3xl font-semibold">K. Jayasekar, Chartered Accountant</h2>
+            <p class="text-slate-700 leading-relaxed">With over two decades in practice and a prior decade in corporate banking, Jayasekar blends sharp audit expertise with practical credit insights. The firm delivers statutory audits, tax audits, GST implementation, and compliance for SMEs and emerging enterprises.</p>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="rounded-lg bg-white shadow-card p-5 border border-slate-100">
+                <p class="text-sm text-slate-500">Experience</p>
+                <p class="text-lg font-semibold text-navy">30+ years cumulative</p>
+                <p class="text-sm text-slate-600 mt-2">Corporate banking, credit appraisal, internal inspection, and 20+ years of CA practice.</p>
+              </div>
+              <div class="rounded-lg bg-white shadow-card p-5 border border-slate-100">
+                <p class="text-sm text-slate-500">Focus</p>
+                <p class="text-lg font-semibold text-navy">Audit &amp; Compliance</p>
+                <p class="text-sm text-slate-600 mt-2">Statutory, tax, GST audits; incorporation filings; ROC documentation.</p>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div>
+                <p class="text-sm font-semibold text-navy">Credentials</p>
+                <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+                  <li>CA Final: May 1989</li>
+                  <li>Practicing Since: August 2004</li>
+                  <li>ICAI Membership: 029286</li>
+                  <li>Firm Registration No.: 010994S</li>
+                  <li>RBI MEF &amp; Code: 42850 / 897911</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-navy">Team Snapshot</p>
+                <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+                  <li>4 Audit Assistants</li>
+                  <li>1 Office Clerk</li>
+                  <li>Robust partner network for specialist filings</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl bg-white shadow-card border border-slate-100 p-8 space-y-6">
+            <p class="text-sm font-semibold text-navy/70">Recent Highlights</p>
+            <div class="space-y-4 text-sm text-slate-700">
+              <div class="flex items-start gap-3">
+                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-navy"></span>
+                <p>Conducted statutory, revenue, and MIS audits for public sector banks; latest statutory audit: UCO Bank, 2017.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-navy"></span>
+                <p>Guides SMEs on GST implementation, return filing, and audit preparedness for evolving regulatory requirements.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-navy"></span>
+                <p>Supports incorporations and ongoing ROC compliances for new companies across industries.</p>
+              </div>
+            </div>
+            <div class="pt-4">
+              <p class="text-sm font-semibold text-navy/70">Representative Clients</p>
+              <div class="mt-3 grid grid-cols-2 gap-3 text-xs text-slate-700">
+                <span class="rounded-lg bg-lightgray px-3 py-2 border border-slate-100">Lanxin Infratech</span>
+                <span class="rounded-lg bg-lightgray px-3 py-2 border border-slate-100">Water Today Pvt. Ltd.</span>
+                <span class="rounded-lg bg-lightgray px-3 py-2 border border-slate-100">Bala Automotive</span>
+                <span class="rounded-lg bg-lightgray px-3 py-2 border border-slate-100">Techchirp Systems</span>
+                <span class="rounded-lg bg-lightgray px-3 py-2 border border-slate-100">KST Infotech</span>
+                <span class="rounded-lg bg-lightgray px-3 py-2 border border-slate-100">Quintessential Designs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="bg-white border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 py-16 lg:py-20">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <p class="text-sm font-semibold text-navy/70 tracking-wide">Services</p>
+              <h2 class="text-3xl font-semibold mt-2">Comprehensive CA Solutions</h2>
+              <p class="text-slate-700 mt-3 max-w-2xl">Built for promoters, CFOs, and founders who need precise compliance, timely filings, and clear guidance across tax, audit, and corporate law.</p>
+            </div>
+            <a href="#contact" class="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-accent transition">Book a consultation &rarr;</a>
+          </div>
+          <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div class="rounded-xl bg-lightgray p-6 border border-slate-200 shadow-card">
+              <div class="h-12 w-12 rounded-full bg-white border border-slate-200 grid place-items-center shadow-card">
+                <img src="Assets/gst.png" alt="GST advisory icon" class="h-8 w-8 object-contain" loading="lazy">
+              </div>
+              <h3 class="mt-4 text-lg font-semibold text-navy">GST Advisory &amp; Audit</h3>
+              <p class="text-sm text-slate-700 mt-2">Implementation, returns filing, reconciliations, and GST audit support tailored to your industry.</p>
+            </div>
+            <div class="rounded-xl bg-lightgray p-6 border border-slate-200 shadow-card">
+              <div class="h-12 w-12 rounded-full bg-white border border-slate-200 grid place-items-center shadow-card">
+                <img src="Assets/tax.png" alt="Income tax icon" class="h-8 w-8 object-contain" loading="lazy">
+              </div>
+              <h3 class="mt-4 text-lg font-semibold text-navy">Income Tax &amp; Advisory</h3>
+              <p class="text-sm text-slate-700 mt-2">Tax planning, assessments, representations, and timely compliance for businesses and promoters.</p>
+            </div>
+            <div class="rounded-xl bg-lightgray p-6 border border-slate-200 shadow-card">
+              <div class="h-12 w-12 rounded-full bg-white border border-slate-200 grid place-items-center shadow-card">
+                <img src="Assets/budget.png" alt="Audit icon" class="h-8 w-8 object-contain" loading="lazy">
+              </div>
+              <h3 class="mt-4 text-lg font-semibold text-navy">Statutory &amp; Tax Audit</h3>
+              <p class="text-sm text-slate-700 mt-2">End-to-end audit execution with clear MIS insights for stakeholders and lenders.</p>
+            </div>
+            <div class="rounded-xl bg-lightgray p-6 border border-slate-200 shadow-card">
+              <div class="h-12 w-12 rounded-full bg-white border border-slate-200 grid place-items-center shadow-card">
+                <img src="Assets/company.png" alt="Company registration icon" class="h-8 w-8 object-contain" loading="lazy">
+              </div>
+              <h3 class="mt-4 text-lg font-semibold text-navy">Company Registration &amp; ROC</h3>
+              <p class="text-sm text-slate-700 mt-2">Incorporations, filings, and ongoing ROC documentation for private limited and LLP entities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="max-w-6xl mx-auto px-6 py-16 lg:py-20">
+        <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-10">
+          <div>
+            <p class="text-sm font-semibold text-navy/70 tracking-wide">Contact</p>
+            <h2 class="text-3xl font-semibold mt-2">Let's discuss your compliance goals.</h2>
+            <p class="text-slate-700 mt-3 max-w-2xl">Reach out for a consultation on audits, GST readiness, tax planning, or incorporation support. Quick response within one business day.</p>
+            <div class="mt-8 grid sm:grid-cols-2 gap-6">
+              <div class="rounded-xl bg-white border border-slate-200 shadow-card p-6">
+                <p class="text-sm text-slate-500">Address</p>
+                <p class="text-base font-semibold text-navy mt-2">571, Anna Salai, Teynampet<br>Hotel Planet Grande Complex<br>Chennai 600 018</p>
+              </div>
+              <div class="rounded-xl bg-white border border-slate-200 shadow-card p-6">
+                <p class="text-sm text-slate-500">Contact</p>
+                <p class="text-base font-semibold text-navy mt-2">Phone: 91-44-42040424<br>Mobile: 98410 43257<br>Email: jayasekarandco@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl bg-white border border-slate-200 shadow-card p-8 space-y-6">
+            <p class="text-sm font-semibold text-navy">Quick Facts</p>
+            <ul class="space-y-3 text-sm text-slate-700">
+              <li class="flex gap-3">
+                <span class="h-2.5 w-2.5 rounded-full bg-navy mt-2"></span>
+                <span>Serving SMEs across manufacturing, engineering, software, event management, and logistics.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="h-2.5 w-2.5 rounded-full bg-navy mt-2"></span>
+                <span>Hands-on partner involvement for every statutory and tax audit.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="h-2.5 w-2.5 rounded-full bg-navy mt-2"></span>
+                <span>Structured approach to timelines, documentation, and lender-ready MIS packs.</span>
+              </li>
+            </ul>
+            <a href="mailto:jayasekarandco@gmail.com" class="inline-flex justify-center items-center gap-2 w-full bg-navy text-white py-3 rounded-md font-semibold shadow-card hover:translate-y-[1px] transition">Email Jayasekar</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-navy text-white">
+      <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-sm">
+        <p class="font-semibold">Jayasekar &amp; Co &bull; Chartered Accountants</p>
+        <p>&copy; <span id="year"></span> All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
