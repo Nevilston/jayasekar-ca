@@ -3,286 +3,1491 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio website for Chartered Accountant K. Jayasekar offering GST, Income Tax, Auditing, and Company Registration services.">
-  <title>Jayasekar &amp; Co | Chartered Accountants</title>
+  <meta name="description" content="K. Jayasekar &amp; Co, Chartered Accountants offering audit &amp; assurance, tax compliance, and business consultancy for SMEs and emerging enterprises.">
+  <title>K. Jayasekar &amp; Co | Chartered Accountants</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="Assets/ca.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: '#0b1f3a',
-            lightgray: '#f5f7fa',
-            accent: '#4f6bff'
-          },
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
-          boxShadow: {
-            card: '0 12px 40px rgba(11,31,58,0.08)'
-          }
-        }
-      }
-    }
-  </script>
   <style>
-    html { scroll-behavior: smooth; }
-    .bg-grid {
-      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.12) 1px, transparent 0);
-      background-size: 32px 32px;
+    :root {
+      --gold: #d3a722;
+      --gold-dark: #b98f0f;
+      --gold-light: #e8ca82;
+      --navy: #283447;
+      --navy-dark: #1d283b;
+      --text: #1d1f24;
+      --muted: #5f6775;
+      --line: #e0e0e0;
+      --bg: #fff;
+      --shadow: 0 18px 40px rgba(29, 40, 59, 0.15);
+      --shadow-soft: 0 10px 24px rgba(29, 40, 59, 0.12);
     }
-    .nav-link {
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Saira", sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      background: url("Assets/bg.png") repeat fixed;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    p {
+      color: var(--text);
+      line-height: 1.7;
+      margin: 0 0 16px;
+      text-align: left;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+    }
+
+    .top-nav {
+      border-bottom: 1px dashed var(--gold);
+      background: #fff;
+    }
+
+    .top-nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 4px 0;
+    }
+
+    .top-nav-lft ul,
+    .top-nav-rht ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .top-nav-lft ul {
+      border-left: 1px dashed var(--gold);
+    }
+
+    .top-nav-lft li {
+      border-right: 1px dashed var(--gold);
+      transition: 0.3s;
+    }
+
+    .top-nav-lft a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      color: var(--muted);
+    }
+
+    .top-nav-lft li:hover {
+      background: var(--gold);
+    }
+
+    .top-nav-lft li:hover a {
+      color: #fff;
+    }
+
+    .top-nav-rht li {
+      margin-left: 18px;
       position: relative;
-      padding-bottom: 6px;
     }
-    .nav-link::after {
+
+    .top-nav-rht li::after {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: 0;
+      right: -10px;
+      top: 50%;
+      width: 1px;
+      height: 16px;
+      background: var(--gold);
+      transform: translateY(-50%);
+    }
+
+    .top-nav-rht li:last-child::after {
+      display: none;
+    }
+
+    .top-nav-rht a {
+      color: var(--muted);
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .top-nav-rht .fa {
+      width: 34px;
+      height: 34px;
+      line-height: 34px;
+      text-align: center;
+      background: var(--gold);
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .logo-sec {
+      padding: 18px 0;
+      background: #fff;
+      border-bottom: 3px solid var(--gold-light);
+      animation: slideDown 0.8s ease;
+    }
+
+    .logo-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo-web {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-web img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+
+    .logo-text h1 {
+      margin: 0;
+      font-size: 24px;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text p {
+      margin: 0;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #555;
+      text-align: left;
+    }
+
+    .logo-cont {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: right;
+    }
+
+    .logo-cont .fa {
+      font-size: 32px;
+      color: var(--gold);
+    }
+
+    .logo-cont h2 {
+      margin: 0;
+      font-size: 16px;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .logo-cont h2 span {
+      display: block;
+      font-size: 13px;
+      color: #888;
+      font-weight: 500;
+    }
+
+    .main-nav {
+      background: var(--gold);
+      border-bottom: 4px solid var(--gold-light);
+      box-shadow: 0 6px 18px rgba(29, 40, 59, 0.12);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .main-nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .main-nav li {
+      flex: 1 1 140px;
+      border-right: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .main-nav li:last-child {
+      border-right: 0;
+    }
+
+    .main-nav a {
+      display: block;
+      padding: 12px 8px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .main-nav a:hover {
+      background: var(--navy-dark);
+    }
+
+    .hero {
+      background: #f0f2f6;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-slider {
+      position: relative;
+    }
+
+    .hero-slides {
+      position: relative;
+      height: 420px;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      display: flex;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(7, 16, 41, 0.78) 0%, rgba(7, 16, 41, 0.55) 45%, rgba(7, 16, 41, 0.15) 100%);
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .hero-slide-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .hero-content {
+      max-width: 560px;
+      color: #fff;
+      background: rgba(7, 16, 41, 0.7);
+      padding: 28px;
+      border-left: 4px solid var(--gold);
+      box-shadow: var(--shadow);
+      animation: fadeUp 1s ease;
+    }
+
+    .hero-kicker {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      padding: 6px 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: 30px;
+      margin: 0 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-text {
+      color: #f4f5f8;
+      margin-bottom: 0;
+    }
+
+    .hero-controls {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .hero-btn {
+      pointer-events: all;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      background: rgba(7, 16, 41, 0.55);
+      color: #fff;
+      font-size: 18px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      margin: 0 12px;
+      transition: 0.3s ease;
+    }
+
+    .hero-btn:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .hero-dots {
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 3;
+    }
+
+    .hero-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      background: transparent;
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    .hero-dot.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      opacity: 1;
+    }
+
+    .ticker {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .ticker-inner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 24px;
       width: 100%;
-      height: 2px;
-      background-color: #4f6bff;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 180ms ease;
     }
-    .nav-link:hover::after,
-    .nav-link:focus-visible::after {
-      transform: scaleX(1);
+
+    .ticker-label {
+      background: var(--gold);
+      color: #fff;
+      padding: 6px 12px;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      white-space: nowrap;
     }
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { scrollbar-width: none; }
+
+    .ticker-track {
+      position: relative;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .ticker-text {
+      display: inline-block;
+      white-space: nowrap;
+      padding-left: 100%;
+      animation: ticker 80s linear infinite;
+      font-size: 13px;
+      color: var(--navy);
+    }
+
+    .ticker-track:hover .ticker-text {
+      animation-play-state: paused;
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .banner-actions {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border: 1px solid var(--navy);
+      color: var(--navy);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      background: #fff;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .button.primary {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section {
+      padding: 44px 0;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section.alt {
+      background: #f7f7f7;
+    }
+
+    .main-heading {
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--navy);
+      text-transform: uppercase;
+      margin: 0 0 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold);
+      display: inline-block;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      margin-bottom: 22px;
+      max-width: 760px;
+    }
+
+    .sub-heading {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--navy);
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .info-card {
+      border: 1px solid var(--line);
+      padding: 16px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .info-card h4 {
+      margin: 0 0 6px;
+      color: var(--navy);
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .info-card p {
+      margin: 0;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .tag-list li {
+      border: 1px solid var(--line);
+      padding: 7px 12px;
+      background: #fff;
+      font-size: 12px;
+      text-transform: uppercase;
+      border-radius: 999px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .industry-section {
+      background: linear-gradient(120deg, #ffffff 0%, #f6f2e8 50%, #f4f6fa 100%);
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(200px, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+      justify-content: center;
+    }
+
+    .industry-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid rgba(29, 40, 59, 0.08);
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      min-height: 86px;
+    }
+
+    .industry-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: rgba(211, 167, 34, 0.4);
+    }
+
+    .industry-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--navy);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      box-shadow: 0 8px 16px rgba(29, 40, 59, 0.3);
+      flex-shrink: 0;
+    }
+
+    .industry-card h3 {
+      margin: 0;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list li {
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 14px;
+    }
+
+    .list li:last-child {
+      border-bottom: 0;
+    }
+
+    .services-section {
+      background: linear-gradient(120deg, #f2f4f8 0%, #ffffff 45%, #f6f2e8 100%);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 40px rgba(29, 40, 59, 0.2);
+    }
+
+    .service-media {
+      position: relative;
+      height: 190px;
+      overflow: hidden;
+    }
+
+    .service-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7, 16, 41, 0) 0%, rgba(7, 16, 41, 0.35) 100%);
+      pointer-events: none;
+    }
+
+    .service-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-media img {
+      transform: scale(1.05);
+    }
+
+    .service-icon {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(7, 16, 41, 0.85);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      font-size: 18px;
+      box-shadow: 0 10px 20px rgba(7, 16, 41, 0.35);
+      backdrop-filter: blur(2px);
+    }
+
+    .service-body {
+      padding: 20px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .service-body h3 {
+      margin: 0;
+      color: var(--navy);
+      text-transform: uppercase;
+      font-size: 15px;
+      letter-spacing: 0.4px;
+    }
+
+    .service-summary {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .service-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .service-card.is-open .service-details {
+      max-height: 520px;
+    }
+
+    .read-more {
+      margin-top: auto;
+      align-self: flex-start;
+      background: var(--navy);
+      color: #fff;
+      border: 0;
+      padding: 9px 14px;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: 0.3s ease;
+    }
+
+    .read-more:hover {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .contact-section {
+      background: linear-gradient(120deg, #ffffff 0%, #f8f4ea 45%, #eef2f8 100%);
+    }
+
+    .contact-header {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .contact-highlight {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--gold);
+    }
+
+    .contact-highlight h3 {
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      font-size: 16px;
+      letter-spacing: 0.6px;
+    }
+
+    .contact-highlight p {
+      color: #e9edf5;
+      margin: 0;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .contact-box {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .contact-box h4 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .contact-box p {
+      margin: 0;
+      text-align: left;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--gold);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      box-shadow: var(--shadow-soft);
+      flex-shrink: 0;
+    }
+
+    .contact-details p {
+      color: var(--muted);
+    }
+
+    .footer {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      color: #fff;
+      animation: fadeUp 1s ease;
+    }
+
+    .footer .container {
+      padding: 28px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+
+    .footer h4 {
+      margin: 0 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-size: 13px;
+      color: #fff;
+    }
+
+    .footer p {
+      color: #e6e9f1;
+      text-align: left;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .footer .footer-accent {
+      display: inline-block;
+      padding: 6px 12px;
+      background: var(--gold);
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-links a,
+    .footer-links span {
+      color: #e6e9f1;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
+
+    .footer-links .fa {
+      color: var(--gold);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .footer-social a {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+    }
+
+    .copy {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    .copy p {
+      margin: 0;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 12px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 800px) {
+      .top-nav-inner {
+        justify-content: center;
+      }
+
+      .logo-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .logo-cont {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .logo-text p {
+        text-align: center;
+      }
+
+      .banner-title {
+        font-size: 24px;
+      }
+
+      .hero-slides {
+        height: 360px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        padding: 22px;
+      }
+
+      .industry-grid {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .main-nav li {
+        flex: 1 1 100%;
+      }
+
+      .top-nav-rht li {
+        margin-left: 10px;
+      }
+
+      .top-nav-rht li::after {
+        display: none;
+      }
+
+      .hero-slides {
+        height: 320px;
+      }
+
+      .hero-controls {
+        display: none;
+      }
+
+      .industry-grid {
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+      }
+    }
   </style>
 </head>
-<body class="antialiased bg-lightgray text-navy">
-  <div class="min-h-screen flex flex-col">
-    <header class="sticky top-0 z-50 backdrop-blur bg-white/90 border-b border-slate-200">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <img src="Assets/ca.png" alt="Jayasekar &amp; Co logo" class="h-10 w-10 object-contain rounded-full border border-slate-200 bg-white shadow-sm" loading="lazy">
-          <div>
-            <p class="text-base font-semibold">Jayasekar &amp; Co</p>
-            <p class="text-xs text-slate-500">Chartered Accountants</p>
-          </div>
-        </div>
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-          <a class="nav-link hover:text-accent transition" href="#home">Home</a>
-          <a class="nav-link hover:text-accent transition" href="#about">About</a>
-          <a class="nav-link hover:text-accent transition" href="#services">Services</a>
-          <a class="nav-link hover:text-accent transition" href="#contact">Contact</a>
-        </nav>
-        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-md text-sm font-semibold shadow-card hover:translate-y-[1px] transition">Consult Now</a>
+<body>
+  <div class="top-nav">
+    <div class="container top-nav-inner">
+      <div class="top-nav-lft">
+        <ul>
+          <li><a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://twitter.com/" target="_blank" rel="noreferrer" aria-label="Twitter"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://www.pinterest.com/" target="_blank" rel="noreferrer" aria-label="Pinterest"><i class="fa fa-pinterest-p"></i></a></li>
+        </ul>
       </div>
-      <div class="md:hidden border-t border-slate-200 bg-white/95 backdrop-blur">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-2 flex items-center gap-6 text-sm font-semibold text-navy overflow-x-auto no-scrollbar">
-          <a class="nav-link pb-1 hover:text-accent" href="#home">Home</a>
-          <a class="nav-link pb-1 hover:text-accent" href="#about">About</a>
-          <a class="nav-link pb-1 hover:text-accent" href="#services">Services</a>
-          <a class="nav-link pb-1 hover:text-accent" href="#contact">Contact</a>
-          <a href="#contact" class="ml-auto inline-flex items-center gap-2 bg-navy text-white px-3 py-2 rounded-md text-xs font-semibold shadow-card hover:translate-y-[1px] transition">Consult</a>
-        </div>
+      <div class="top-nav-rht">
+        <ul>
+        </ul>
       </div>
-    </header>
-
-    <main id="home" class="flex-1">
-      <section class="relative overflow-hidden">
-        <div class="lg:grid lg:grid-cols-2 lg:min-h-[520px]">
-          <div class="relative">
-            <div class="absolute inset-0 bg-gradient-to-br from-navy via-[#132a4e] to-[#0b1f3a]"></div>
-            <div class="absolute inset-0 opacity-30 bg-grid"></div>
-            <div class="relative max-w-3xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-32">
-              <div class="max-w-2xl text-white space-y-6">
-                <p class="text-sm uppercase tracking-[0.3em] text-slate-200">Trusted Chartered Accountant</p>
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">Precision-led finance &amp; tax advisory for growing Indian businesses.</h1>
-                <p class="text-lg text-slate-200/90">K. Jayasekar, FCA &mdash; bringing 20+ years of audit, taxation, and corporate banking experience to keep your compliance flawless and your growth decisive.</p>
-                <div class="flex flex-wrap items-center gap-4">
-                  <a href="#contact" class="inline-flex items-center gap-2 bg-white text-navy px-5 py-3 rounded-md font-semibold shadow-card hover:translate-y-[1px] transition">Consult Now</a>
-                  <a href="#services" class="inline-flex items-center gap-2 text-white/90 hover:text-white transition">View Services</a>
-                </div>
-                <div class="flex gap-6 pt-4 text-sm text-slate-200/80">
-                  <div>
-                    <p class="font-semibold text-white">Membership</p>
-                    <p>ICAI No. 029286 &bull; FRN 010994S</p>
-                  </div>
-                  <div>
-                    <p class="font-semibold text-white">RBI MEF</p>
-                    <p>MEF 42850 &bull; Code 897911</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="relative hidden lg:block">
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center"></div>
-            <div class="absolute inset-0 bg-navy/10 mix-blend-multiply"></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="max-w-6xl mx-auto px-6 py-16 lg:py-20">
-        <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-12 items-start">
-          <div class="space-y-6">
-            <p class="text-sm font-semibold text-navy/70 tracking-wide">About</p>
-            <h2 class="text-3xl font-semibold">K. Jayasekar, Chartered Accountant</h2>
-            <p class="text-slate-700 leading-relaxed">With over two decades in practice and a prior decade in corporate banking, Jayasekar blends sharp audit expertise with practical credit insights. The firm delivers statutory audits, tax audits, GST implementation, and compliance for SMEs and emerging enterprises.</p>
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div class="rounded-lg bg-white shadow-card p-5 border border-slate-100">
-                <p class="text-sm text-slate-500">Experience</p>
-                <p class="text-lg font-semibold text-navy">30+ years cumulative</p>
-                <p class="text-sm text-slate-600 mt-2">Corporate banking, credit appraisal, internal inspection, and 20+ years of CA practice.</p>
-              </div>
-              <div class="rounded-lg bg-white shadow-card p-5 border border-slate-100">
-                <p class="text-sm text-slate-500">Focus</p>
-                <p class="text-lg font-semibold text-navy">Audit &amp; Compliance</p>
-                <p class="text-sm text-slate-600 mt-2">Statutory, tax, GST audits; incorporation filings; ROC documentation.</p>
-              </div>
-            </div>
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div>
-                <p class="text-sm font-semibold text-navy">Credentials</p>
-                <ul class="mt-3 space-y-2 text-slate-700 text-sm">
-                  <li>CA Final: May 1989</li>
-                  <li>Practicing Since: August 2004</li>
-                  <li>ICAI Membership: 029286</li>
-                  <li>Firm Registration No.: 010994S</li>
-                  <li>RBI MEF &amp; Code: 42850 / 897911</li>
-                </ul>
-              </div>
-              <div>
-                <p class="text-sm font-semibold text-navy">Team Snapshot</p>
-                <ul class="mt-3 space-y-2 text-slate-700 text-sm">
-                  <li>4 Audit Assistants</li>
-                  <li>1 Office Clerk</li>
-                  <li>Robust partner network for specialist filings</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-2xl bg-white shadow-card border border-slate-100 p-8 space-y-6">
-            <p class="text-sm font-semibold text-navy/70">Recent Highlights</p>
-            <div class="space-y-4 text-sm text-slate-700">
-              <div class="flex items-start gap-3">
-                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-navy"></span>
-                <p>Conducted statutory, revenue, and MIS audits for public sector banks; latest statutory audit: UCO Bank, 2017.</p>
-              </div>
-              <div class="flex items-start gap-3">
-                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-navy"></span>
-                <p>Guides SMEs on GST implementation, return filing, and audit preparedness for evolving regulatory requirements.</p>
-              </div>
-              <div class="flex items-start gap-3">
-                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-navy"></span>
-                <p>Supports incorporations and ongoing ROC compliances for new companies across industries.</p>
-              </div>
-            </div>
-            <div class="pt-4">
-              <p class="text-sm font-semibold text-navy/70">Representative Clients</p>
-              <div class="mt-3 grid grid-cols-2 gap-3 text-xs text-slate-700">
-                <span class="rounded-lg bg-lightgray px-3 py-2 border border-slate-100">Lanxin Infratech</span>
-                <span class="rounded-lg bg-lightgray px-3 py-2 border border-slate-100">Water Today Pvt. Ltd.</span>
-                <span class="rounded-lg bg-lightgray px-3 py-2 border border-slate-100">Bala Automotive</span>
-                <span class="rounded-lg bg-lightgray px-3 py-2 border border-slate-100">Techchirp Systems</span>
-                <span class="rounded-lg bg-lightgray px-3 py-2 border border-slate-100">KST Infotech</span>
-                <span class="rounded-lg bg-lightgray px-3 py-2 border border-slate-100">Quintessential Designs</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" class="bg-white border-y border-slate-200">
-        <div class="max-w-6xl mx-auto px-6 py-16 lg:py-20">
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div>
-              <p class="text-sm font-semibold text-navy/70 tracking-wide">Services</p>
-              <h2 class="text-3xl font-semibold mt-2">Comprehensive CA Solutions</h2>
-              <p class="text-slate-700 mt-3 max-w-2xl">Built for promoters, CFOs, and founders who need precise compliance, timely filings, and clear guidance across tax, audit, and corporate law.</p>
-            </div>
-            <a href="#contact" class="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-accent transition">Book a consultation &rarr;</a>
-          </div>
-          <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            <div class="rounded-xl bg-lightgray p-6 border border-slate-200 shadow-card">
-              <div class="h-12 w-12 rounded-full bg-white border border-slate-200 grid place-items-center shadow-card">
-                <img src="Assets/gst.png" alt="GST advisory icon" class="h-8 w-8 object-contain" loading="lazy">
-              </div>
-              <h3 class="mt-4 text-lg font-semibold text-navy">GST Advisory &amp; Audit</h3>
-              <p class="text-sm text-slate-700 mt-2">Implementation, returns filing, reconciliations, and GST audit support tailored to your industry.</p>
-            </div>
-            <div class="rounded-xl bg-lightgray p-6 border border-slate-200 shadow-card">
-              <div class="h-12 w-12 rounded-full bg-white border border-slate-200 grid place-items-center shadow-card">
-                <img src="Assets/tax.png" alt="Income tax icon" class="h-8 w-8 object-contain" loading="lazy">
-              </div>
-              <h3 class="mt-4 text-lg font-semibold text-navy">Income Tax &amp; Advisory</h3>
-              <p class="text-sm text-slate-700 mt-2">Tax planning, assessments, representations, and timely compliance for businesses and promoters.</p>
-            </div>
-            <div class="rounded-xl bg-lightgray p-6 border border-slate-200 shadow-card">
-              <div class="h-12 w-12 rounded-full bg-white border border-slate-200 grid place-items-center shadow-card">
-                <img src="Assets/budget.png" alt="Audit icon" class="h-8 w-8 object-contain" loading="lazy">
-              </div>
-              <h3 class="mt-4 text-lg font-semibold text-navy">Statutory &amp; Tax Audit</h3>
-              <p class="text-sm text-slate-700 mt-2">End-to-end audit execution with clear MIS insights for stakeholders and lenders.</p>
-            </div>
-            <div class="rounded-xl bg-lightgray p-6 border border-slate-200 shadow-card">
-              <div class="h-12 w-12 rounded-full bg-white border border-slate-200 grid place-items-center shadow-card">
-                <img src="Assets/company.png" alt="Company registration icon" class="h-8 w-8 object-contain" loading="lazy">
-              </div>
-              <h3 class="mt-4 text-lg font-semibold text-navy">Company Registration &amp; ROC</h3>
-              <p class="text-sm text-slate-700 mt-2">Incorporations, filings, and ongoing ROC documentation for private limited and LLP entities.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="max-w-6xl mx-auto px-6 py-16 lg:py-20">
-        <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-10">
-          <div>
-            <p class="text-sm font-semibold text-navy/70 tracking-wide">Contact</p>
-            <h2 class="text-3xl font-semibold mt-2">Let's discuss your compliance goals.</h2>
-            <p class="text-slate-700 mt-3 max-w-2xl">Reach out for a consultation on audits, GST readiness, tax planning, or incorporation support. Quick response within one business day.</p>
-            <div class="mt-8 grid sm:grid-cols-2 gap-6">
-              <div class="rounded-xl bg-white border border-slate-200 shadow-card p-6">
-                <p class="text-sm text-slate-500">Address</p>
-                <p class="text-base font-semibold text-navy mt-2">571, Anna Salai, Teynampet<br>Hotel Planet Grande Complex<br>Chennai 600 018</p>
-              </div>
-              <div class="rounded-xl bg-white border border-slate-200 shadow-card p-6">
-                <p class="text-sm text-slate-500">Contact</p>
-                <p class="text-base font-semibold text-navy mt-2">Phone: 91-44-42040424<br>Mobile: 98410 43257<br>Email: jayasekarandco@gmail.com</p>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-2xl bg-white border border-slate-200 shadow-card p-8 space-y-6">
-            <p class="text-sm font-semibold text-navy">Quick Facts</p>
-            <ul class="space-y-3 text-sm text-slate-700">
-              <li class="flex gap-3">
-                <span class="h-2.5 w-2.5 rounded-full bg-navy mt-2"></span>
-                <span>Serving SMEs across manufacturing, engineering, software, event management, and logistics.</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="h-2.5 w-2.5 rounded-full bg-navy mt-2"></span>
-                <span>Hands-on partner involvement for every statutory and tax audit.</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="h-2.5 w-2.5 rounded-full bg-navy mt-2"></span>
-                <span>Structured approach to timelines, documentation, and lender-ready MIS packs.</span>
-              </li>
-            </ul>
-            <a href="mailto:jayasekarandco@gmail.com" class="inline-flex justify-center items-center gap-2 w-full bg-navy text-white py-3 rounded-md font-semibold shadow-card hover:translate-y-[1px] transition">Email Jayasekar</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="bg-navy text-white">
-      <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-sm">
-        <p class="font-semibold">Jayasekar &amp; Co &bull; Chartered Accountants</p>
-        <p>&copy; <span id="year"></span> All rights reserved.</p>
-      </div>
-    </footer>
+    </div>
   </div>
+
+  <header class="logo-sec">
+    <div class="container logo-inner">
+      <div class="logo-web">
+        <img src="Assets/ca.png" alt="K. Jayasekar &amp; Co logo">
+        <div class="logo-text">
+          <h1>K. Jayasekar &amp; Co</h1>
+          <p>Chartered Accountants</p>
+        </div>
+      </div>
+      <div class="logo-cont">
+        <i class="fa fa-phone"></i>
+        <h2><span>We feel happy to talk</span>+91 44 4204 0424 / 98410 43257</h2>
+      </div>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="container">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#industry">Industry</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="home">
+    <section class="hero reveal">
+      <div class="hero-slider">
+        <div class="hero-slides">
+          <article class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=80');">
+            <div class="container hero-slide-inner">
+              <div class="hero-content">
+                <span class="hero-kicker">Audit &amp; Assurance</span>
+                <h2 class="hero-title">Statutory, Tax, and Internal Audits</h2>
+                <p class="hero-text">Audit engagements aligned with rigorous standards and practical credit insights to support SMEs and emerging enterprises.</p>
+                <div class="banner-actions">
+                  <a class="button primary" href="#contact">Consult Now</a>
+                  <a class="button" href="#services">View Services</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1600&q=80');">
+            <div class="container hero-slide-inner">
+              <div class="hero-content">
+                <span class="hero-kicker">Tax &amp; Compliance</span>
+                <h2 class="hero-title">Income Tax and GST Compliance</h2>
+                <p class="hero-text">Structured compliance, filing support, and regulatory coverage that keeps your reporting accurate and audit-ready.</p>
+                <div class="banner-actions">
+                  <a class="button primary" href="#contact">Speak to Us</a>
+                  <a class="button" href="#services">View Services</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');">
+            <div class="container hero-slide-inner">
+              <div class="hero-content">
+                <span class="hero-kicker">Consultancy</span>
+                <h2 class="hero-title">Company Formation &amp; Advisory</h2>
+                <p class="hero-text">Incorporation support, ROC documentation, and strategic advisory focused on growth and financial clarity.</p>
+                <div class="banner-actions">
+                  <a class="button primary" href="#contact">Start a Project</a>
+                  <a class="button" href="#services">Explore Services</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="hero-controls">
+          <button class="hero-btn hero-prev" type="button" aria-label="Previous slide">&lt;</button>
+          <button class="hero-btn hero-next" type="button" aria-label="Next slide">&gt;</button>
+        </div>
+
+        <div class="hero-dots" role="tablist" aria-label="Hero slides">
+          <button class="hero-dot active" type="button" aria-label="Slide 1"></button>
+          <button class="hero-dot" type="button" aria-label="Slide 2"></button>
+          <button class="hero-dot" type="button" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker">
+      <div class="ticker-inner">
+        <div class="ticker-label">Important Dates</div>
+        <div class="ticker-track">
+          <div class="ticker-text">Issue of TDS Certificate u/s 194-IA for TDS deducted on Purchase of Property in December: 14/02/2026 | Issue of TDS Certificate for tax deducted on rent above 50,000 pm by certain individuals/HUF under Section 194-IB where lease has terminated in December: 14/02/2026 | Issue of TDS Certificate for tax deducted u/s 194M on certain payments by individual/HUF in December: 14/02/2026 | Issue of TDS Certificate for tax deducted u/s 194S on Virtual Digital Assets in December: 14/02/2026 | Issue of TDS certificates other than salary for Q3 of FY 2025-26: 15/02/2026 | ESI payment for January: 15/02/2026 | E-Payment of PF for January: 15/02/2026 | Details of Deposit of TDS/TCS of January by book entry by an office of the Government: 15/02/2026 | Online application for CAG Empanelment of CA firms/LLPs for FY 2025-26: 17/02/2026 | Monthly Return by persons outside India providing online information and data base access or retrieval services, for January. Also to be filed by every registered person providing online money gaming from a place outside India to a person in India: 20/02/2026 | Add/amend particulars (other than GSTIN) in GSTR-1 of Jan. It can be filed after filing of GSTR-1 but before filing corresponding GSTR-3B: 20/02/2026 | Summary Return cum Payment of Tax for January by Monthly filers (other than QRMP): 20/02/2026 | Deposit of GST of January under QRMP scheme: 25/02/2026 | Return by persons with Unique Identification Number (UIN) like embassies etc to get refund under GST for goods and services purchased by them, for January: 28/02/2026 | Submit hard copy of acknowledgement and supporting documents for CAG Empanelment of CA firms/LLPs for FY 2025-26, after online application: 28/02/2026</div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section id="industry" class="section industry-section reveal">
+      <div class="container">
+        <h2 class="main-heading">Industry</h2>
+        <p class="section-intro">Sectors served with tailored audit, compliance, and advisory support.</p>
+        <div class="industry-grid">
+          <div class="industry-card">
+            <span class="industry-icon"><i class="fa fa-building"></i></span>
+            <h3>Infrastructure</h3>
+          </div>
+          <div class="industry-card">
+            <span class="industry-icon"><i class="fa fa-industry"></i></span>
+            <h3>Manufacturing</h3>
+          </div>
+          <div class="industry-card">
+            <span class="industry-icon"><i class="fa fa-exchange"></i></span>
+            <h3>Trading</h3>
+          </div>
+          <div class="industry-card">
+            <span class="industry-icon"><i class="fa fa-hotel"></i></span>
+            <h3>Hotels</h3>
+          </div>
+          <div class="industry-card">
+            <span class="industry-icon"><i class="fa fa-calendar"></i></span>
+            <h3>Event Management</h3>
+          </div>
+          <div class="industry-card">
+            <span class="industry-icon"><i class="fa fa-desktop"></i></span>
+            <h3>Computer Hardware</h3>
+          </div>
+          <div class="industry-card">
+            <span class="industry-icon"><i class="fa fa-code"></i></span>
+            <h3>Software Development/Support Services</h3>
+          </div>
+          <div class="industry-card">
+            <span class="industry-icon"><i class="fa fa-university"></i></span>
+            <h3>Banks</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section services-section reveal">
+      <div class="container">
+        <h2 class="main-heading">Services</h2>
+        <p class="section-intro">Purpose-built audit, compliance, and advisory services with clear deliverables and practical business impact.</p>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-media">
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80" alt="Regulatory compliance support">
+              <span class="service-icon"><i class="fa fa-shield"></i></span>
+            </div>
+            <div class="service-body">
+              <h3>Regulatory Compliance Services</h3>
+              <p class="service-summary">Proactive support to identify, manage, and control regulatory risks while reducing operational friction.</p>
+              <div class="service-details">
+                <p>Our team of experienced compliance specialists provides high-quality and cost-effective services to help organizations manage regulatory risks. We assist you in identifying, managing, and controlling existing and future regulatory risks. Our people work at the strategic level to maximize competitive advantages from regulation, and at the operational level to minimize costs and disruptions, freeing up management time in the process. We believe in a proactive rather than a monitoring approach to regulation.</p>
+              </div>
+              <button class="read-more" type="button" aria-expanded="false">Read More</button>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-media">
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80" alt="Financial statement audit review">
+              <span class="service-icon"><i class="fa fa-line-chart"></i></span>
+            </div>
+            <div class="service-body">
+              <h3>Financial Statement Audit</h3>
+              <p class="service-summary">Highest assurance audits aligned with accounting standards for clarity, consistency, and transparency.</p>
+              <div class="service-details">
+                <p>A financial statement audit provides the highest level of assurance of a company's financial statements. It is the process of official financial investigation to know the actual status of financial statements and ensure they are asserted as per the specific norms of international accounting standards. Our team of audit partners and managers is experienced with small, mid-size and large, family-owned businesses, growing companies, and start-up enterprises. Each audit engagement is customized to our client's needs to build trust and confidence through clarity, consistency, and transparency.</p>
+              </div>
+              <button class="read-more" type="button" aria-expanded="false">Read More</button>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-media">
+              <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Internal audit planning meeting">
+              <span class="service-icon"><i class="fa fa-search"></i></span>
+            </div>
+            <div class="service-body">
+              <h3>Internal Audit</h3>
+              <p class="service-summary">Risk-based reviews to strengthen controls, improve processes, and reduce avoidable exposure.</p>
+              <div class="service-details">
+                <p>We assist organizations in improving their internal function by measuring the effectiveness of existing processes and advising on the development of enhanced methodologies. Our internal audit team is not just a policing body but focuses on adding value to the business with effective controls at an optimum cost. Our risk-based internal audit plans focus on critical areas to enhance internal controls, improve processes, and help clients achieve wider assurance cost-effectively.</p>
+              </div>
+              <button class="read-more" type="button" aria-expanded="false">Read More</button>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-media">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80" alt="Performance audit and governance">
+              <span class="service-icon"><i class="fa fa-bullseye"></i></span>
+            </div>
+            <div class="service-body">
+              <h3>Performance &amp; Proprietary Audit</h3>
+              <p class="service-summary">Evaluation of plan execution, resource utilization, and adherence to authority and procedure.</p>
+              <div class="service-details">
+                <p>Performance audit checks whether corporate plans are effectively executed and the reasons for variances in actual and planned performance. It also investigates if capital resources are properly utilized. Proprietary audit concerns executive decisions with an emphasis on public interest and financial discipline, to ensure actions are within the framework of sanction, authority, rule, procedure, and law. Our expert team undertakes proprietary audits focusing on correct implementation of plans, financial prudence, public interest, and prevention of wasteful expenditure.</p>
+              </div>
+              <button class="read-more" type="button" aria-expanded="false">Read More</button>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-media">
+              <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1200&q=80" alt="Compliance diagnostics and reporting">
+              <span class="service-icon"><i class="fa fa-check-square-o"></i></span>
+            </div>
+            <div class="service-body">
+              <h3>Compliance Diagnostics</h3>
+              <p class="service-summary">Accurate, tailored reporting and diagnostics to support confident business decisions.</p>
+              <div class="service-details">
+                <p>Today's businesses have several compliance reporting requirements. With regard to accounting, compliance means ensuring a company's financial matters are handled in accordance with laws and regulations. At any point in time, a corporation should be able to provide accurate information about its accounts to its shareholders or to regulating authorities. We believe that businesses make better decisions when they have access to financial information that is accurate, suitably tailored, and delivered on a timely basis. K. Jayasekar &amp; Co brings together experienced resources from relevant areas to address clients' tax and statutory accounting compliance and reporting requirements. Our compliance team focuses on ensuring accurate, high-quality financial reporting.</p>
+              </div>
+              <button class="read-more" type="button" aria-expanded="false">Read More</button>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-media">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Risk assurance and controls">
+              <span class="service-icon"><i class="fa fa-exclamation-triangle"></i></span>
+            </div>
+            <div class="service-body">
+              <h3>Risk Assurance Service</h3>
+              <p class="service-summary">Structured risk management that improves productivity and protects organizational goals.</p>
+              <div class="service-details">
+                <p>Risk management works through a framework that provides the organization an effective process and methods to follow to achieve desired results. Risk assessment helps identify potential problems with an organization's information, resources, and operations. Fine-tuning risk management systems assists in increasing productivity and achieving organizational goals, while helping the organization become familiar with operations, saving time, energy, and resources. The risk management and control systems are designed to ensure the business is focused on achieving its objectives, and risk assurance services facilitate identification of significant risks and mitigating them to the extent possible.</p>
+              </div>
+              <button class="read-more" type="button" aria-expanded="false">Read More</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section reveal">
+      <div class="container">
+        <h2 class="main-heading">About Us</h2>
+        <div class="two-col">
+          <div>
+            <p>Established in 2004, K. Jayasekar &amp; Co. is a sole proprietary firm with 30+ years of combined experience in corporate banking and professional practice. We bridge the gap between rigorous audit standards and practical credit insights to support SMEs and emerging enterprises.</p>
+            <div>
+              <h3 class="sub-heading">Our Services</h3>
+              <ul class="list">
+                <li>Audit &amp; Assurance: Statutory, Tax, and Internal Audits.</li>
+                <li>Tax &amp; Compliance: Income Tax compliance &amp; GST implementation and regulatory filings.</li>
+                <li>Consultancy: Company formation and strategic business advisory.</li>
+              </ul>
+            </div>
+            <p>We go beyond standard compliance, focusing on delivering value-added insights that drive business growth and financial clarity.</p>
+            <div class="two-col">
+              <div class="info-card">
+                <h4>Experience</h4>
+                <p>30+ years cumulative</p>
+                <p>Corporate banking internal inspection and 20+ years of CA practice.</p>
+              </div>
+              <div class="info-card">
+                <h4>Focus</h4>
+                <p>Audit &amp; Compliance</p>
+                <p>Statutory, Internal, Due Diligence, Tax, GST audits; Incorporation filings; ROC documentation.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="sub-heading">Knowledge Bank (Ravi &amp; Raghu)</h3>
+            <ul class="list">
+              <li>Tax Calculator</li>
+              <li>Acts</li>
+              <li>Income Tax 2025</li>
+              <li>GST Laws</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section reveal">
+      <div class="container">
+        <div class="contact-header">
+          <div>
+            <h2 class="main-heading">Contact</h2>
+            <p class="section-intro">Reach out for audits, GST readiness, tax planning, or incorporation support. Quick response within one business day.</p>
+          </div>
+          <div class="contact-highlight">
+            <h3>Let's Talk Compliance</h3>
+            <p>Book a consultation and get a clear, lender-ready compliance roadmap.</p>
+            <div class="contact-actions">
+              <a class="button primary" href="mailto:jayasekarandco@gmail.com">Email Us</a>
+              <a class="button" href="tel:+914442040424">Call Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-box">
+            <span class="contact-icon"><i class="fa fa-map-marker"></i></span>
+            <div class="contact-details">
+              <h4>Address</h4>
+              <p>571, Anna Salai, Teynampet<br>Hotel Planet Grande Complex<br>Chennai 600 018</p>
+            </div>
+          </div>
+          <div class="contact-box">
+            <span class="contact-icon"><i class="fa fa-phone"></i></span>
+            <div class="contact-details">
+              <h4>Phone</h4>
+              <p>91-44-42040424<br>98410 43257</p>
+            </div>
+          </div>
+          <div class="contact-box">
+            <span class="contact-icon"><i class="fa fa-envelope"></i></span>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <p><a href="mailto:jayasekarandco@gmail.com">jayasekarandco@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <span class="footer-accent">K. Jayasekar &amp; Co</span>
+          <p>Chartered Accountants delivering audit, compliance, and advisory services for SMEs and emerging enterprises.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/" target="_blank" rel="noreferrer" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home"><i class="fa fa-angle-right"></i>Home</a></li>
+            <li><a href="#industry"><i class="fa fa-angle-right"></i>Industry</a></li>
+            <li><a href="#services"><i class="fa fa-angle-right"></i>Services</a></li>
+            <li><a href="#contact"><i class="fa fa-angle-right"></i>Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Core Services</h4>
+          <ul class="footer-links">
+            <li><span><i class="fa fa-angle-right"></i>Audit &amp; Assurance</span></li>
+            <li><span><i class="fa fa-angle-right"></i>Tax &amp; Compliance</span></li>
+            <li><span><i class="fa fa-angle-right"></i>Internal Audit</span></li>
+            <li><span><i class="fa fa-angle-right"></i>Business Advisory</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <p>&copy; <span id="year"></span> All rights reserved.</p>
+    </div>
+  </footer>
+
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const revealItems = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    document.querySelectorAll(".read-more").forEach((button) => {
+      button.addEventListener("click", () => {
+        const card = button.closest(".service-card");
+        if (!card) return;
+        const isOpen = card.classList.toggle("is-open");
+        button.textContent = isOpen ? "Read Less" : "Read More";
+        button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    });
+
+    const slides = Array.from(document.querySelectorAll(".hero-slide"));
+    const dots = Array.from(document.querySelectorAll(".hero-dot"));
+    const prevBtn = document.querySelector(".hero-prev");
+    const nextBtn = document.querySelector(".hero-next");
+    let currentSlide = 0;
+    let slideTimer;
+
+    const showSlide = (index) => {
+      slides[currentSlide].classList.remove("active");
+      dots[currentSlide].classList.remove("active");
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add("active");
+      dots[currentSlide].classList.add("active");
+    };
+
+    const startSlider = () => {
+      slideTimer = setInterval(() => {
+        showSlide(currentSlide + 1);
+      }, 6000);
+    };
+
+    const stopSlider = () => {
+      if (slideTimer) {
+        clearInterval(slideTimer);
+      }
+    };
+
+    if (slides.length > 1) {
+      startSlider();
+
+      if (prevBtn && nextBtn) {
+        prevBtn.addEventListener("click", () => {
+          stopSlider();
+          showSlide(currentSlide - 1);
+          startSlider();
+        });
+
+        nextBtn.addEventListener("click", () => {
+          stopSlider();
+          showSlide(currentSlide + 1);
+          startSlider();
+        });
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          stopSlider();
+          showSlide(index);
+          startSlider();
+        });
+      });
+
+      const heroSlider = document.querySelector(".hero-slider");
+      if (heroSlider) {
+        heroSlider.addEventListener("mouseenter", stopSlider);
+        heroSlider.addEventListener("mouseleave", startSlider);
+      }
+    }
   </script>
 </body>
 </html>
